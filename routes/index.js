@@ -24,7 +24,7 @@ module.exports = function(app)
     {
         //en este caso le decimos que queremos renderizar la vista views/index.jade con algunos datos
         res.render('index', { 
-            titulo: 'Formularios en node con Jade y Twitter Bootstrap'
+            titulo: 'Formularios en NodeJS con Bootstrap'
         });
     });
 
