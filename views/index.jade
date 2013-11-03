@@ -1,6 +1,14 @@
 extends layout
 
 block content
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        ul.nav 
+          li  
+            a(href='/users') Usuarios registrados
+          li  
+            a(href='/') Formulario de registro
   //ventana modal donde mostraremos los mensajes de error
   #myModal.modal.fade(tabindex="-1",role="dialog",aria-labelledby="myModalLabel",aria-hidden="true")
     .modal-header
@@ -10,7 +18,8 @@ block content
         p.messageModal
       .modal-footer
         a.btn.btn-danger(data-dismiss="modal",aria-hidden="true") Cerrar
-  #login-form.well.span7.offset3                      
+  h2.span8.offset2#titulo #{titulo}
+  #login-form.well.span7.offset2                      
     form.form-horizontal()#caja-login#registerSubmit.well.span6   
       h1 Register Form
       h6.subheading Registrate a través del formulario

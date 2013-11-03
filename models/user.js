@@ -15,6 +15,23 @@ UserModel.createUsersTable = function()
 	console.log("La tabla usuarios ha sido correctamente creada");
 }
 
+//obtenemos todos los clientes de la tabla clientes
+//con db.all obtenemos un array de objetos, es decir todos
+UserModel.getUsers = function(callback)
+{
+    db.all("SELECT * FROM usuarios", function(err, rows) 
+    {
+        if(err)
+        {
+            throw err;
+        }
+        else
+        {
+            callback(null, rows);
+        }
+    });
+}
+
 UserModel.registerUser = function(userData, callback)
 {
 	var response = {};//respuesta para devolver 

@@ -24,7 +24,18 @@ module.exports = function(app)
     {
         //en este caso le decimos que queremos renderizar la vista views/index.jade con algunos datos
         res.render('index', { 
-            title: 'Formularios en node con Jade y Twitter Bootstrap'
+            titulo: 'Formularios en node con Jade y Twitter Bootstrap'
+        });
+    });
+
+    //obtenemos los datos de todos los usuarios
+    app.get("/users", function(req, res){
+        UserModel.getUsers(function(error, data)
+        {
+            res.render('users', { 
+                titulo: 'Usuarios registrados en el blog',
+                usuarios : data
+            });
         });
     });
 
@@ -37,7 +48,7 @@ module.exports = function(app)
     	}
         //en este caso le decimos que queremos renderizar la vista views/index.jade con algunos datos
         res.render('register', { 
-            title: 'Formulario de registro con Twitter Bootstrap'
+            titulo: 'Formulario de registro con Twitter Bootstrap'
         });
     });
 
