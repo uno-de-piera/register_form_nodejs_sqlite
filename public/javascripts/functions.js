@@ -1,4 +1,4 @@
-var baseurl = "http://localhost:3000/";//baseurl
+var baseurl = "http://udpnodeblog.herokuapp.com/";//baseurl
 
 //en ie8 no funciona preventDefault
 function ie8SafePreventEvent(event) 
