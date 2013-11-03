@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        ul.nav 
+          li  
+            a(href='/users') Usuarios registrados
+          li  
+            a(href='/') Formulario de registro
+  h2.span7.offset4#titulo #{titulo}
+  .well.span10.offset1#usersTable
+    table.table.table-striped
+      thead
+        tr
+          th Id
+          th Nombre
+          th Password
+          th Fecha de registro
+      tbody
+        if(usuarios)
+          each usuario in usuarios
+            tr.alert.alert-info
+              td=usuario.id
+              td=usuario.username
+              td=usuario.password 
+              td=usuario.registerDate                  
