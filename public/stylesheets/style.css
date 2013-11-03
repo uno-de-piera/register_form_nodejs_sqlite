@@ -1,7 +1,6 @@
 #login-form{
 	background: #2A3041;
-	padding-top: 40px;
-	margin-top: 40px;
+	padding: 25px 0px 5px 0px;
 }
 #caja-login {
 	border-radius: 6px;
@@ -17,5 +16,8 @@ input[type=text],input[type=password]
 	padding: 8px;
 }
 #titulo{
-	margin-top: 50px;
+	text-align: center;
+}
+#panel{
+	margin-top: 60px;
 }
