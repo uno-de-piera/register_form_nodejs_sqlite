@@ -41,6 +41,7 @@ module.exports = function(app)
         });
     });
 
+
     //recibimos la interaccion de cuando el usuario envia el formulario de registro
    	app.post("/register", function(req,res)
    	{
