@@ -1,4 +1,4 @@
-var baseurl = "http://udpnodeblog.herokuapp.com/";//baseurl
+var baseurl = "http://localhost:3000/";//baseurl
 
 //en ie8 no funciona preventDefault
 function ie8SafePreventEvent(event) 
@@ -9,7 +9,7 @@ function ie8SafePreventEvent(event)
 $(document).ready(function()
 {
     //al hacer submit al formulario de registro
-    $("#registerSubmit").on("submit", function(e) 
+    $("#registerForm").on("submit", function(e) 
     {
         //prevenimos el comportamiento por defecto
         ie8SafePreventEvent(e);

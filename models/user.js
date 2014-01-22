@@ -32,6 +32,7 @@ UserModel.getUsers = function(callback)
     });
 }
 
+//funcion para registrar nuevos usuarios
 UserModel.registerUser = function(userData, callback)
 {
 	var response = {};//respuesta para devolver 

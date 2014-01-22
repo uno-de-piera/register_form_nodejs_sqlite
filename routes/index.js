@@ -17,9 +17,7 @@ module.exports = function(app)
 		res.end();
 	});
 
-    //para acceder aquí escribiremos http://localhost:3000/
-    //req es un objeto que contiene información sobre la solicitud HTTP que provocó el evento. 
-    //En respuesta a req, res se utiliza para devolver la respuesta HTTP que necesitemos.
+    //ruta que muestra el formulario de registro
     app.get("/", function(req, res)
     {
         //en este caso le decimos que queremos renderizar la vista views/index.jade con algunos datos
@@ -28,7 +26,7 @@ module.exports = function(app)
         });
     });
 
-    //obtenemos los datos de todos los usuarios
+    //obtenemos y mostramos todos con getUsers() los datos de todos los usuarios
     app.get("/users", function(req, res){
         UserModel.getUsers(function(error, data)
         {
@@ -38,20 +36,6 @@ module.exports = function(app)
             });
         });
     });
-
-    //mostramos la vista views/register.jade
-    app.get("/register", function(req, res)
-    {
-    	if(req.session.username)
-    	{ 
-    		res.redirect("/home");
-    	}
-        //en este caso le decimos que queremos renderizar la vista views/index.jade con algunos datos
-        res.render('register', { 
-            titulo: 'Formulario de registro con Twitter Bootstrap'
-        });
-    });
-
 
     //recibimos la interaccion de cuando el usuario envia el formulario de registro
    	app.post("/register", function(req,res)
